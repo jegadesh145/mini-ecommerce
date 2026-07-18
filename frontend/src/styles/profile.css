@@ -1,0 +1,367 @@
+/* ============================================
+   Profile Page Styles
+   ============================================ */
+
+.profile-page {
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  padding: 2rem 0;
+}
+
+.profile-header {
+  margin-bottom: 2rem;
+}
+
+.profile-header h1 {
+  font-size: 1.75rem;
+  color: #1a1a2e;
+}
+
+.profile-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  max-width: 700px;
+}
+
+/* ========== Profile Card ========== */
+.profile-card {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.card-header h2 {
+  font-size: 1.15rem;
+  color: #1a1a2e;
+}
+
+/* ========== Avatar Card ========== */
+.avatar-card {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.avatar-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.avatar {
+  position: relative;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #e5e7eb;
+}
+
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.avatar-placeholder {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: white;
+  font-size: 2.5rem;
+  font-weight: 700;
+}
+
+.avatar-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  font-size: 0.8rem;
+  gap: 0.25rem;
+}
+
+.avatar:hover .avatar-overlay {
+  opacity: 1;
+}
+
+.btn-remove-avatar {
+  background: none;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 0.4rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  transition: all 0.2s ease;
+}
+
+.btn-remove-avatar:hover:not(:disabled) {
+  background: #fef2f2;
+}
+
+.btn-remove-avatar:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* ========== Info Card ========== */
+.info-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 0.75rem 0;
+}
+
+.info-row:not(:last-child) {
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.info-icon {
+  color: #9ca3af;
+  font-size: 1.1rem;
+  margin-top: 0.2rem;
+  flex-shrink: 0;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-content label {
+  display: block;
+  font-size: 0.78rem;
+  color: #9ca3af;
+  font-weight: 500;
+  margin-bottom: 0.15rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.info-content p {
+  font-size: 0.95rem;
+  color: #374151;
+}
+
+.role-badge {
+  display: inline-block;
+  background: #eef2ff;
+  color: #4f46e5;
+  padding: 0.15rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.8rem !important;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.btn-edit {
+  background: none;
+  border: 1px solid #e5e7eb;
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  color: #4f46e5;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: all 0.2s ease;
+}
+
+.btn-edit:hover {
+  background: #f3f4f6;
+  border-color: #d1d5db;
+}
+
+.edit-input {
+  width: 100%;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.95rem;
+  border: 2px solid #4f46e5;
+  border-radius: 6px;
+  outline: none;
+  background: white;
+}
+
+/* ========== Password Card ========== */
+.password-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.password-form .form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.password-form .form-group input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.9rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.password-form .form-group input:focus {
+  border-color: #4f46e5;
+}
+
+/* ========== Danger Card ========== */
+.danger-card {
+  border: 1px solid #fecaca;
+}
+
+.danger-card .card-header h2 {
+  color: #dc2626;
+}
+
+.danger-description {
+  font-size: 0.9rem;
+  color: #6b7280;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+
+.btn-danger-outline {
+  background: none;
+  border: 1px solid #ef4444;
+  color: #ef4444;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease;
+}
+
+.btn-danger-outline:hover {
+  background: #fef2f2;
+}
+
+.btn-danger {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-danger:hover:not(:disabled) {
+  background-color: #b91c1c;
+}
+
+.btn-danger:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background-color: #e5e7eb;
+  color: #374151;
+  border: none;
+  padding: 0.65rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.btn-secondary:hover {
+  background-color: #d1d5db;
+}
+
+.deactivate-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.deactivate-form .form-group label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #374151;
+  margin-bottom: 0.3rem;
+  display: block;
+}
+
+.deactivate-form .form-group input {
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  font-size: 0.9rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  outline: none;
+}
+
+.deactivate-form .form-group input:focus {
+  border-color: #ef4444;
+}
+
+.deactivate-actions {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 640px) {
+  .profile-page {
+    padding: 1rem 0;
+  }
+
+  .profile-content {
+    max-width: 100%;
+  }
+
+  .avatar-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .card-header {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: flex-start;
+  }
+
+  .deactivate-actions {
+    flex-direction: column;
+  }
+}

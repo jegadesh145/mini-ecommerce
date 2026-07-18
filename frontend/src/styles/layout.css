@@ -1,0 +1,29 @@
+/* ============================================
+   Layout Styles
+   ============================================ */
+
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+}
+
+.home-page {
+  padding: 4rem 0;
+  text-align: center;
+}
+
+.home-page h1 {
+  font-size: 2.5rem;
+  color: #1a1a2e;
+  margin-bottom: 0.75rem;
+}
+
+.home-page p {
+  font-size: 1.1rem;
+  color: #6b7280;
+}
