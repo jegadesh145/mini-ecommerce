@@ -83,16 +83,3 @@ npm start
 GET /health
 Response: { "success": true, "message": "Mini Ecommerce API Running" }
 ```
-
-## Development Phases
-
-1. ✅ **Phase 1**: Project Setup + PostgreSQL + Prisma
-2. ⏳ **Phase 2**: Authentication (Register, Login, JWT)
-3. ⏳ **Phase 3**: User Profile
-4. ⏳ **Phase 4**: Navbar & Layout
-5. ⏳ **Phase 5**: Product Listing
-6. ⏳ **Phase 6**: Cart
-7. ⏳ **Phase 7**: Orders & Checkout
-8. ⏳ **Phase 8**: Admin Dashboard
-9. ⏳ **Phase 9**: UI Polish & Validation
-10. ⏳ **Phase 10**: Deployment (Render + Netlify)
