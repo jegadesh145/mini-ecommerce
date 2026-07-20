@@ -24,15 +24,14 @@ const app = express();
 app.use(helmet());
 
 // CORS - allow frontend to access API
-const allowedOrigins = [
-  "http://localhost:3000",
-  "https://mini-ecommerce-nine-indol.vercel.app",
-];
-
 app.use(
   cors({
-    origin: function (origin, callback) {
-      if (!origin || allowedOrigins.includes(origin)) {
+    origin: (origin, callback) => {
+      if (
+        !origin ||
+        origin === "http://localhost:3000" ||
+        origin.endsWith(".vercel.app")
+      ) {
         callback(null, true);
       } else {
         callback(new Error("Not allowed by CORS"));
