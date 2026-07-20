@@ -5,7 +5,7 @@ import axios from "axios";
 
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "http://localhost:5000",
+  baseURL: process.env.REACT_APP_API_URL || "https://mini-ecommerce-2-nx17.onrender.com",
   withCredentials: true, // Include cookies (refresh token)
   headers: {
     "Content-Type": "application/json",
