@@ -55,6 +55,15 @@ app.use("/api/", limiter);
 // Routes
 // ============================================
 
+// Home route
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Mini E-Commerce API is running 🚀",
+    version: "1.0.0",
+  });
+});
+
 // Health check route
 app.get("/health", (req, res) => {
   res.status(200).json({
