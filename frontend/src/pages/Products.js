@@ -26,6 +26,7 @@ const Products = () => {
 
   useEffect(() => {
     loadProducts();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [filters.page, filters.category, filters.sortBy, filters.sortOrder]);
 
   const loadProducts = async () => {

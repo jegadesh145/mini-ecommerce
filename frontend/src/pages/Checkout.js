@@ -2,10 +2,10 @@
 // Checkout Page
 // ============================================
 import React, { useState, useEffect } from "react";
-import { useNavigate, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { getCart } from "../services/cartService";
 import { createOrder } from "../services/orderService";
-import { FiArrowLeft, FiCheck, FiMapPin, FiPhone } from "react-icons/fi";
+import { FiCheck, FiMapPin, FiPhone } from "react-icons/fi";
 import toast from "react-hot-toast";
 
 const Checkout = () => {
@@ -20,6 +20,7 @@ const Checkout = () => {
 
   useEffect(() => {
     loadCart();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const loadCart = async () => {
