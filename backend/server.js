@@ -105,16 +105,35 @@ app.use((err, req, res, next) => {
 // ============================================
 // Start Server
 // ============================================
-const PORT = process.env.PORT || 5000;
+const DEFAULT_PORT = process.env.PORT || 5000;
 
-const startServer = async () => {
-  // Connect to PostgreSQL
-  await connectDB();
+const startServer = async (port = DEFAULT_PORT) => {
+  try {
+    // Connect to PostgreSQL
+    await connectDB();
 
-  app.listen(PORT, () => {
-    console.log(`🚀 Server running on port ${PORT}`);
-    console.log(`📍 Health check: http://localhost:${PORT}/health`);
-  });
+    const server = app.listen(port, () => {
+      console.log("\n===================================");
+      console.log("🚀 Secure Authentication API Started");
+      console.log(`🌍 Environment : ${process.env.NODE_ENV || "development"}`);
+      console.log(`📡 Port        : ${port}`);
+      console.log("===================================\n");
+    });
+
+    // Handle port already in use error - try next port
+    server.on("error", (err) => {
+      if (err.code === "EADDRINUSE") {
+        console.warn(`\n⚠️  Port ${port} is already in use, trying port ${port + 1}...`);
+        startServer(port + 1);
+      } else {
+        console.error("\n❌ Server error:", err);
+        process.exit(1);
+      }
+    });
+  } catch (error) {
+    console.error("\n❌ Failed to start server:", error);
+    process.exit(1);
+  }
 };
 
 startServer();
