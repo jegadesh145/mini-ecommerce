@@ -3,9 +3,13 @@
 // ============================================
 import axios from "axios";
 
+// API URL configuration
+const API_URL =
+  process.env.REACT_APP_API_URL || "https://mini-ecommerce-2-nx17.onrender.com";
+
 // Create axios instance with base configuration
 const api = axios.create({
-  baseURL: process.env.REACT_APP_API_URL || "https://mini-ecommerce-2-nx17.onrender.com",
+  baseURL: API_URL,
   withCredentials: true, // Include cookies (refresh token)
   headers: {
     "Content-Type": "application/json",
@@ -41,7 +45,7 @@ api.interceptors.response.use(
       try {
         // Attempt to refresh the token
         const response = await axios.post(
-          `${api.defaults.baseURL}/api/auth/refresh`,
+          `${API_URL}/api/auth/refresh`,
           {},
           { withCredentials: true }
         );
